@@ -1,0 +1,8 @@
+{
+  "name": "Remix Gospel Amplifiers TV",
+  "description": "Premium Nigerian Christian movie and media streaming platform producing faith-based drama, spiritual warfare series, and gospel content.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
