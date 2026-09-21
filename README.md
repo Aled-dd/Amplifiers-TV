@@ -1,6 +1,6 @@
 # Gospel Amplifiers TV 🎬✨
 
-An anointed Christian movie streaming platform and spiritual warfare media hub built with React 19, Vite, Tailwind CSS, and Lucide Icons.
+An anointed Christian movie streaming platform.
 
 ## 🚀 Getting Started
 
