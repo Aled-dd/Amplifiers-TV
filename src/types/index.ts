@@ -4,9 +4,7 @@ export type PageType =
   | 'watch' 
   | 'about' 
   | 'ministry' 
-  | 'blog' 
   | 'contact' 
-  | 'testimony' 
   | 'donate' 
   | 'community';
 

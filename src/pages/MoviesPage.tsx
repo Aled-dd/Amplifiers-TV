@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageType, ContentCategory, GenreType, MediaItem } from '../types';
 import { FEATURED_SERIES_AND_MOVIES, LATEST_VIDEOS } from '../data/mockData';
+import { useYouTubeViews } from '../context/YouTubeViewsContext';
 import { Play, Search, Filter, SlidersHorizontal, Star, Flame, Sparkles, Clock, Eye, Film, Youtube } from 'lucide-react';
 
 interface MoviesPageProps {
@@ -8,6 +9,7 @@ interface MoviesPageProps {
 }
 
 export const MoviesPage: React.FC<MoviesPageProps> = ({ onNavigate }) => {
+  const { getExactLiveView } = useYouTubeViews();
   const [selectedCategory, setSelectedCategory] = useState<ContentCategory | 'ALL'>('ALL');
   const [selectedGenre, setSelectedGenre] = useState<GenreType | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
@@ -92,7 +94,7 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onNavigate }) => {
                 <span>{currentFeatured.releaseYear}</span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
-                  <Eye className="w-3.5 h-3.5" /> {currentFeatured.viewCount}
+                  <Eye className="w-3.5 h-3.5" /> {getExactLiveView(currentFeatured.youtubeId, currentFeatured.viewCount)}
                 </span>
               </div>
 
@@ -200,7 +202,7 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onNavigate }) => {
 
                 <div className="p-4 pt-0 flex items-center justify-between text-xs text-gray-400 border-t border-[#1C1C1C] mt-2">
                   <span className="flex items-center gap-1 text-[#D4AF37] font-semibold">
-                    <Eye className="w-3.5 h-3.5" /> {video.viewCount}
+                    <Eye className="w-3.5 h-3.5" /> {getExactLiveView(video.youtubeId, video.viewCount)}
                   </span>
                   <span className="text-[11px] text-gray-400 group-hover:text-white transition-colors font-medium flex items-center gap-1">
                     Watch Now <Play className="w-3 h-3 fill-current text-[#D4AF37]" />
@@ -335,7 +337,7 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onNavigate }) => {
                 <div className="p-4 pt-0 flex items-center justify-between text-[11px] text-gray-400 border-t border-[#1C1C1C] mt-2">
                   <span>{item.releaseYear}</span>
                   <span className="text-[#D4AF37] font-semibold flex items-center gap-1">
-                    <Eye className="w-3 h-3" /> {item.viewCount}
+                    <Eye className="w-3 h-3" /> {getExactLiveView(item.youtubeId, item.viewCount)}
                   </span>
                 </div>
               </div>

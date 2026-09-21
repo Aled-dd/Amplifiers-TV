@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageType } from '../types';
-import { Tv, Play, BookOpen, Heart, MessageSquare } from 'lucide-react';
+import { Tv, Play, Info, Heart } from 'lucide-react';
 
 interface MobileBottomNavProps {
   currentPage: PageType;
@@ -11,8 +11,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentPage, o
   const navItems = [
     { id: 'home' as PageType, label: 'Home', icon: <Tv className="w-5 h-5" /> },
     { id: 'movies' as PageType, label: 'Movies', icon: <Play className="w-5 h-5" /> },
-    { id: 'blog' as PageType, label: 'Devotion', icon: <BookOpen className="w-5 h-5" /> },
-    { id: 'testimony' as PageType, label: 'Testimony', icon: <MessageSquare className="w-5 h-5" /> },
+    { id: 'about' as PageType, label: 'About', icon: <Info className="w-5 h-5" /> },
     { id: 'donate' as PageType, label: 'Donate', icon: <Heart className="w-5 h-5 text-[#D4AF37]" /> },
   ];
 

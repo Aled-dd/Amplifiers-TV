@@ -21,8 +21,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     isFeatured: true,
     isNewRelease: true,
     isTrending: true,
-    viewCount: '15M views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '2,007,209 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Ephesians 6:12 - For we wrestle not against flesh and blood...',
     episodes: [
@@ -315,8 +315,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/IrJ4yfKjfEA?si=rY3ZwZ1V3RqcLVA6',
     isFeatured: true,
     isTrending: true,
-    viewCount: '497k views',
-    director: 'Amplifierstv',
+    viewCount: '506,833 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Amplifierstv Drama Team'],
     scriptureReference: 'Ephesians 6:12 - For we wrestle not against flesh and blood...',
     episodes: [
@@ -378,8 +378,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/HFJs6hgQuvM?si=mbNidAr9L8jKTpjm',
     isFeatured: true,
     isTrending: true,
-    viewCount: '428k views',
-    director: 'Amplifierstv',
+    viewCount: '429,219 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Amplifierstv Drama Team']
   },
   {
@@ -398,8 +398,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/Q5bdeXgh7qk?si=ojLie13oasMRHEHQ',
     isFeatured: true,
     isTrending: true,
-    viewCount: '412k views',
-    director: 'Amplifierstv',
+    viewCount: '412,697 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Amplifierstv Drama Team']
   },
   {
@@ -408,7 +408,7 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     category: 'SERIES',
     genre: ['Deliverance', 'Spiritual Warfare', 'Faith'],
     releaseYear: 2025,
-    durationOrSeasons: '2 Episodes',
+    durationOrSeasons: '3 Episodes',
     rating: '13+ Family Drama',
     description: 'A mysterious school girl possesses dark powers, using them to intimidate teachers and manipulate classmates into a coven. An eye opener for parents and students.',
     synopsis: 'A mysterious school girl possesses dark powers, using them to intimidate teachers and manipulate classmates into a coven. An eye opener for parents and students.',
@@ -418,8 +418,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/W84AldrribQ',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '658k views',
-    director: 'Sister Deborah Adedoyin / Amplifierstv',
+    viewCount: '867,674 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Amplifierstv Drama Team'],
     episodes: [
       {
@@ -441,6 +441,16 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
         synopsis: 'Part 2: The continuation and deliverance in The Dark School Girl series.',
         youtubeId: 'tsc_Fqqdq0U',
         thumbnailUrl: 'https://img.youtube.com/vi/tsc_Fqqdq0U/hqdefault.jpg'
+      },
+      {
+        id: 'dsg-ep3',
+        episodeNumber: 3,
+        seasonNumber: 1,
+        title: 'The Dark School Girl - Part 3',
+        duration: '45m 18s',
+        synopsis: 'Part 3: The intense battle line is drawn as light confronts darkness in this powerful deliverance drama.',
+        youtubeId: 'v-w73uq99Nk',
+        thumbnailUrl: 'https://img.youtube.com/vi/v-w73uq99Nk/hqdefault.jpg'
       }
     ]
   },
@@ -460,8 +470,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/Hejds8a8bl0',
     isFeatured: true,
     isTrending: true,
-    viewCount: '376k views',
-    director: 'Amplifierstv',
+    viewCount: '378,386 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Team']
   },
   {
@@ -480,8 +490,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/yhGRuFdx-Y4',
     isFeatured: true,
     isTrending: true,
-    viewCount: '315k views',
-    director: 'Amplifierstv',
+    viewCount: '325,658 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Amplifierstv Drama Team']
   },
   {
@@ -501,8 +511,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     isFeatured: true,
     isNewRelease: true,
     isTrending: true,
-    viewCount: '21k views',
-    director: 'Prophet Silas / Amplifiers TV',
+    viewCount: '32,850 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers TV Drama Team'],
     scriptureReference: 'Romans 8:14-16 - For as many as are led by the Spirit of God, they are the sons of God.'
   },
@@ -523,8 +533,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     isFeatured: true,
     isNewRelease: true,
     isTrending: true,
-    viewCount: '27k views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '33,979 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Luke 10:19 - Behold, I give unto you power to tread on serpents and scorpions...'
   },
@@ -545,8 +555,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     isFeatured: true,
     isNewRelease: true,
     isTrending: true,
-    viewCount: '21k views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '22,403 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Proverbs 3:5-6 - Trust in the Lord with all thine heart...'
   },
@@ -567,31 +577,31 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     isFeatured: true,
     isNewRelease: true,
     isTrending: true,
-    viewCount: '37k views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '47,196 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Jeremiah 29:11 - For I know the plans I have for you, declares the Lord...'
   },
   {
     id: 'dark-school-girl-3',
-    title: 'THE DARK SCHOOL GIRL 3 (The battle line) Amplifierstv - Prophet Silas - Latest Christian Movie',
+    title: 'The Dark School Girl - Part 3',
     category: 'MOVIES',
     genre: ['Deliverance', 'Spiritual Warfare', 'Youth'],
     releaseYear: 2025,
-    durationOrSeasons: '45m',
+    durationOrSeasons: '45m 18s',
     rating: '16+ Spiritual Warfare',
-    description: 'THE DARK SCHOOL GIRL 3 (The battle line) Amplifierstv - Prophet Silas - Latest Christian Movie - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
-    synopsis: 'THE DARK SCHOOL GIRL 3 (The battle line) Amplifierstv - Prophet Silas - Latest Christian Movie - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
+    description: 'The Dark School Girl - Part 3 | 45m 18s - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
+    synopsis: 'The Dark School Girl - Part 3 | 45m 18s - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
     posterUrl: 'https://img.youtube.com/vi/v-w73uq99Nk/hqdefault.jpg',
     bannerUrl: 'https://img.youtube.com/vi/v-w73uq99Nk/hqdefault.jpg',
     youtubeId: 'v-w73uq99Nk',
-    playlistUrl: 'https://youtu.be/v-w73uq99Nk?si=mbmZVfxuH3ajXv3v',
+    playlistUrl: 'https://youtu.be/v-w73uq99Nk?si=ZQh_wb1SK6ULZxeA',
     isFeatured: true,
     isNewRelease: true,
     isTrending: true,
-    viewCount: '135K views',
-    director: 'Sister Deborah Adedoyin / Prophet Silas',
-    cast: ['Sister Deborah Adedoyin', 'Prophet Silas', 'Amplifierstv Drama Team'],
+    viewCount: '164,024 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
+    cast: ['Victor Ikemdinachi Nwachukwu', 'Amplifierstv Drama Team'],
     scriptureReference: '1 John 4:4 - Greater is He that is in you than he that is in the world.'
   },
   {
@@ -610,8 +620,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/YyG-caIFuB0',
     isFeatured: true,
     isTrending: true,
-    viewCount: '62k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '87,759 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -630,8 +640,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/ytcNwLy1YWs',
     isFeatured: true,
     isTrending: true,
-    viewCount: '35k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '28,940 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -650,8 +660,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/bvcE_spoyOw',
     isFeatured: true,
     isTrending: true,
-    viewCount: '93k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '92,883 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -670,8 +680,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/vHKMe5pKL2g',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '80k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '74,329 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -690,8 +700,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/gA7g0Yk_d6c',
     isFeatured: true,
     isTrending: true,
-    viewCount: '120k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '116,495 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -709,8 +719,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     youtubeId: 'JRJ-LZe_DVk',
     playlistUrl: 'https://youtu.be/JRJ-LZe_DVk',
     isNewRelease: true,
-    viewCount: '50k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '51,963 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -728,8 +738,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     youtubeId: 'miVLypfVuZw',
     playlistUrl: 'https://youtu.be/miVLypfVuZw',
     isNewRelease: true,
-    viewCount: '50k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '49,402 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -747,8 +757,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     youtubeId: 'VfjDxDYhW2Q',
     playlistUrl: 'https://youtu.be/VfjDxDYhW2Q',
     isTrending: true,
-    viewCount: '60k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '59,900 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -766,8 +776,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     youtubeId: 'KPvCXdd6b1w',
     playlistUrl: 'https://youtu.be/KPvCXdd6b1w',
     isNewRelease: true,
-    viewCount: '30k views',
-    director: 'Amplifiers Tv Team',
+    viewCount: '21,286 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Amplifiers Tv Team']
   },
   {
@@ -786,8 +796,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     playlistUrl: 'https://youtu.be/GkCZjEB-N0M',
     isFeatured: true,
     isTrending: true,
-    viewCount: '170k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '193,933 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -804,8 +814,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     bannerUrl: 'https://img.youtube.com/vi/ZuViwHByY8k/hqdefault.jpg',
     youtubeId: 'ZuViwHByY8k',
     playlistUrl: 'https://youtu.be/ZuViwHByY8k',
-    viewCount: '60k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '59,721 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -822,8 +832,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     bannerUrl: 'https://img.youtube.com/vi/eVZjCIRRAMY/hqdefault.jpg',
     youtubeId: 'eVZjCIRRAMY',
     playlistUrl: 'https://youtu.be/eVZjCIRRAMY',
-    viewCount: '40k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '42,368 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -840,8 +850,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     bannerUrl: 'https://img.youtube.com/vi/s2ReA_O7RTw/hqdefault.jpg',
     youtubeId: 's2ReA_O7RTw',
     playlistUrl: 'https://youtu.be/s2ReA_O7RTw',
-    viewCount: '55k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '56,713 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -859,8 +869,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     youtubeId: 'lJul_3kA8c8',
     playlistUrl: 'https://youtu.be/lJul_3kA8c8',
     isTrending: true,
-    viewCount: '204k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '212,159 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -878,8 +888,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     youtubeId: 'A6GJxOEASw4',
     playlistUrl: 'https://youtu.be/A6GJxOEASw4',
     isTrending: true,
-    viewCount: '273k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '279,101 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -896,8 +906,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     bannerUrl: 'https://img.youtube.com/vi/V-vDMPXiEUc/hqdefault.jpg',
     youtubeId: 'V-vDMPXiEUc',
     playlistUrl: 'https://youtu.be/V-vDMPXiEUc',
-    viewCount: '65k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '65,517 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -914,8 +924,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     bannerUrl: 'https://img.youtube.com/vi/x5qVl9iZ_cM/hqdefault.jpg',
     youtubeId: 'x5qVl9iZ_cM',
     playlistUrl: 'https://youtu.be/x5qVl9iZ_cM',
-    viewCount: '66k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '66,884 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   },
   {
@@ -932,8 +942,8 @@ export const FEATURED_SERIES_AND_MOVIES: MediaItem[] = [
     bannerUrl: 'https://img.youtube.com/vi/rwIf0BmreSg/hqdefault.jpg',
     youtubeId: 'rwIf0BmreSg',
     playlistUrl: 'https://youtu.be/rwIf0BmreSg',
-    viewCount: '109k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '110,780 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers Tv Team']
   }
 ];
@@ -955,8 +965,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/WNzilonVRWc?si=V-s0LgaLjQDE78Pa',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '21k views',
-    director: 'Prophet Silas / Amplifiers TV',
+    viewCount: '32,850 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifiers TV Drama Team'],
     scriptureReference: 'Romans 8:14-16 - For as many as are led by the Spirit of God, they are the sons of God.'
   },
@@ -976,8 +986,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/pugXOLDCeiE?si=uS-phdKDxIhOP7Nq',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '27k views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '33,979 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Luke 10:19 - Behold, I give unto you power to tread on serpents and scorpions...'
   },
@@ -997,8 +1007,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/ugpO0BBgJFQ?si=OSuE2WuDZqiBMvoy',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '21k views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '22,403 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Proverbs 3:5-6 - Trust in the Lord with all thine heart...'
   },
@@ -1018,30 +1028,30 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/hc_nASN4Scw?si=zQFF6mr8A4ZH2-dU',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '37k views',
-    director: 'Prophet Silas / Amplifierstv',
+    viewCount: '47,196 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team'],
     scriptureReference: 'Jeremiah 29:11 - For I know the plans I have for you, declares the Lord...'
   },
   {
     id: 'dark-school-girl-3',
-    title: 'THE DARK SCHOOL GIRL 3 (The battle line) Amplifierstv - Prophet Silas - Latest Christian Movie',
+    title: 'The Dark School Girl - Part 3',
     category: 'MOVIES',
     genre: ['Deliverance', 'Spiritual Warfare', 'Youth'],
     releaseYear: 2025,
-    durationOrSeasons: '45m',
+    durationOrSeasons: '45m 18s',
     rating: '16+ Spiritual Warfare',
-    description: 'THE DARK SCHOOL GIRL 3 (The battle line) Amplifierstv - Prophet Silas - Latest Christian Movie - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
-    synopsis: 'THE DARK SCHOOL GIRL 3 (The battle line) Amplifierstv - Prophet Silas - Latest Christian Movie - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
+    description: 'The Dark School Girl - Part 3 | 45m 18s - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
+    synopsis: 'The Dark School Girl - Part 3 | 45m 18s - The intense battle line is drawn as light confronts darkness in this powerful eye-opener for parents, students, and educators.',
     posterUrl: 'https://img.youtube.com/vi/v-w73uq99Nk/hqdefault.jpg',
     bannerUrl: 'https://img.youtube.com/vi/v-w73uq99Nk/hqdefault.jpg',
     youtubeId: 'v-w73uq99Nk',
-    playlistUrl: 'https://youtu.be/v-w73uq99Nk?si=mbmZVfxuH3ajXv3v',
+    playlistUrl: 'https://youtu.be/v-w73uq99Nk?si=ZQh_wb1SK6ULZxeA',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '135K views',
-    director: 'Sister Deborah Adedoyin / Prophet Silas',
-    cast: ['Sister Deborah Adedoyin', 'Prophet Silas', 'Amplifierstv Drama Team'],
+    viewCount: '164,024 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
+    cast: ['Victor Ikemdinachi Nwachukwu', 'Amplifierstv Drama Team'],
     scriptureReference: '1 John 4:4 - Greater is He that is in you than he that is in the world.'
   },
   {
@@ -1060,8 +1070,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/gQGMIu4gtNk?si=h5mce90rZvfRKqmD',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '30k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '68,259 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team']
   },
   {
@@ -1080,8 +1090,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/YyG-caIFuB0?si=y3XLpduEqDIvDN87',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '54k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '87,759 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team']
   },
   {
@@ -1100,8 +1110,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/jvit4lJ-pRc?si=vJfANJZq368WKZ05',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '70k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '108,464 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team']
   },
   {
@@ -1120,9 +1130,9 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/tsc_Fqqdq0U?si=05PHhSOcjlX93S2w',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '240k views',
-    director: 'Sister Deborah Adedoyin / Prophet Silas',
-    cast: ['Sister Deborah Adedoyin', 'Amplifierstv Drama Team']
+    viewCount: '415,007 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
+    cast: ['Victor Ikemdinachi Nwachukwu', 'Amplifierstv Drama Team']
   },
   {
     id: 'dark-school-girl-eps-1',
@@ -1140,9 +1150,9 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/W84AldrribQ?si=j3cBej33VvZvPXVB',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '668k views',
-    director: 'Sister Deborah Adedoyin / Prophet Silas',
-    cast: ['Sister Deborah Adedoyin', 'Amplifierstv Drama Team']
+    viewCount: '867,674 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
+    cast: ['Victor Ikemdinachi Nwachukwu', 'Amplifierstv Drama Team']
   },
   {
     id: 'what-a-mother',
@@ -1160,8 +1170,8 @@ export const LATEST_VIDEOS: MediaItem[] = [
     playlistUrl: 'https://youtu.be/tipWGxdA3IA?si=AiD3Hw_bMx2zlns2',
     isNewRelease: true,
     isTrending: true,
-    viewCount: '87k views',
-    director: 'Prophet Silas / Amplifiers Tv',
+    viewCount: '93,942 views',
+    director: 'Victor Ikemdinachi Nwachukwu',
     cast: ['Prophet Silas', 'Amplifierstv Drama Team']
   }
 ];

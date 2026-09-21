@@ -159,24 +159,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => {
-                onNavigate('blog');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-left px-4 py-2 text-xs text-gray-400 hover:text-white"
-            >
-              Devotionals
-            </button>
-            <button
-              onClick={() => {
-                onNavigate('testimony');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-left px-4 py-2 text-xs text-gray-400 hover:text-white"
-            >
-              Testimonies
-            </button>
-            <button
-              onClick={() => {
                 onOpenPrayerModal();
                 setMobileMenuOpen(false);
               }}

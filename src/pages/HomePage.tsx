@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { PageType } from '../types';
 import { FEATURED_SERIES_AND_MOVIES, LATEST_VIDEOS } from '../data/mockData';
+import { useYouTubeViews } from '../context/YouTubeViewsContext';
 import { Play, ChevronLeft, ChevronRight, Cross, Award, ExternalLink, Clock, Eye, Sparkles } from 'lucide-react';
 import prophetSilasImg from '../assets/images/regenerated_image_1786250452138.png';
 import blackBibleImg from '../assets/images/regenerated_image_1786287994708.png';
@@ -15,6 +16,7 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
+  const { getExactLiveView } = useYouTubeViews();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const heroItem = FEATURED_SERIES_AND_MOVIES[0]; // Prophet Silas Series
@@ -282,7 +284,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <div className="p-6">
                     <div className="flex items-center justify-between text-xs text-[#D4AF37] font-semibold mb-2">
                       <span>{series.durationOrSeasons}</span>
-                      <span>{series.viewCount}</span>
+                      <span>{getExactLiveView(series.youtubeId, series.viewCount)}</span>
                     </div>
 
                     <h3 className="font-cinzel text-xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
@@ -393,7 +395,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
                 <div className="p-5 pt-0 flex items-center justify-between text-xs text-gray-400 border-t border-[#1C1C1C] mt-2">
                   <span className="flex items-center gap-1 text-[#D4AF37] font-semibold">
-                    <Eye className="w-3.5 h-3.5" /> {movie.viewCount}
+                    <Eye className="w-3.5 h-3.5" /> {getExactLiveView(movie.youtubeId, movie.viewCount)}
                   </span>
                   <span className="text-[11px] text-gray-400 group-hover:text-white transition-colors font-medium flex items-center gap-1">
                     Watch Movie <Play className="w-3 h-3 fill-current text-[#D4AF37]" />

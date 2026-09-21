@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageType, MediaItem } from '../types';
 import { FEATURED_SERIES_AND_MOVIES, LATEST_VIDEOS, SAMPLE_COMMENTS } from '../data/mockData';
+import { useYouTubeViews } from '../context/YouTubeViewsContext';
 import { 
   Play, 
   Flame, 
@@ -9,7 +10,10 @@ import {
   MessageSquare, 
   ChevronRight, 
   Send, 
-  Users
+  Users,
+  RefreshCw,
+  Eye,
+  Film
 } from 'lucide-react';
 
 interface WatchPageProps {
@@ -19,13 +23,25 @@ interface WatchPageProps {
 }
 
 export const WatchPage: React.FC<WatchPageProps> = ({ mediaId, onNavigate, onOpenPrayerModal }) => {
-  // Find requested media item or fallback to Prophet Silas
+  const { getExactLiveView, getCompactLiveView, refreshView, isSyncing } = useYouTubeViews();
+
+  // Find requested media item (supports ID, YouTube ID, or Episode ID) or fallback to featured
   const allMedia = [...LATEST_VIDEOS, ...FEATURED_SERIES_AND_MOVIES];
-  const activeMedia = allMedia.find((m) => m.id === mediaId) || FEATURED_SERIES_AND_MOVIES[0];
+  const activeMedia = allMedia.find((m) => 
+    m.id === mediaId || 
+    m.youtubeId === mediaId || 
+    m.episodes?.some((ep) => ep.id === mediaId || ep.youtubeId === mediaId)
+  ) || FEATURED_SERIES_AND_MOVIES[0];
   
+  const initialEp = activeMedia.episodes?.find((ep) => ep.id === mediaId || ep.youtubeId === mediaId);
   const [activeEpisodeId, setActiveEpisodeId] = useState<string>(
-    activeMedia.episodes?.[0]?.id || 'main'
+    initialEp?.id || activeMedia.episodes?.[0]?.id || 'main'
   );
+
+  useEffect(() => {
+    const matchingEp = activeMedia.episodes?.find((ep) => ep.id === mediaId || ep.youtubeId === mediaId);
+    setActiveEpisodeId(matchingEp?.id || activeMedia.episodes?.[0]?.id || 'main');
+  }, [activeMedia.id, mediaId]);
   
   // Interactive comments state
   const [commentsList, setCommentsList] = useState(SAMPLE_COMMENTS);
@@ -104,11 +120,33 @@ export const WatchPage: React.FC<WatchPageProps> = ({ mediaId, onNavigate, onOpe
                 <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                   {activeMedia.description || activeMedia.synopsis}
                 </p>
-                <div className="pt-2 text-xs text-gray-400 border-t border-[#1C1C1C] flex flex-wrap gap-x-4 gap-y-1">
+                <div className="pt-2 text-xs text-gray-400 border-t border-[#1C1C1C] flex flex-wrap items-center gap-x-4 gap-y-2">
                   <span>Channel: <strong className="text-white">Amplifierstv</strong></span>
-                  <span>Director: <strong className="text-white">{activeMedia.director || 'Prophet Silas / Amplifierstv'}</strong></span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-xs">
+                    <span className="text-gray-300 font-medium">Director:</span>
+                    <strong className="text-[#D4AF37] font-semibold tracking-wide">
+                      {activeMedia.director || 'Victor Ikemdinachi Nwachukwu'}
+                    </strong>
+                  </span>
                   <span>Duration: <strong className="text-white">{activeMedia.durationOrSeasons}</strong></span>
-                  <span>Views: <strong className="text-white">{activeMedia.viewCount}</strong></span>
+                  <div className="flex items-center gap-2">
+                    <span>Views:</span>
+                    <strong className="text-white flex items-center gap-1.5 font-bold">
+                      <span className="relative flex h-2 w-2" title="Live synchronized from YouTube">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                      </span>
+                      {getExactLiveView(activeYoutubeId, activeMedia.viewCount)}
+                    </strong>
+                    <button 
+                      onClick={() => refreshView(activeYoutubeId)} 
+                      title="Click to synchronize live views from YouTube"
+                      disabled={isSyncing}
+                      className="text-gray-400 hover:text-[#D4AF37] p-0.5 rounded transition-colors cursor-pointer"
+                    >
+                      <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin text-[#D4AF37]' : ''}`} />
+                    </button>
+                  </div>
                   {activeMedia.category && <span>Category: <strong className="text-white">{activeMedia.category}</strong></span>}
                 </div>
               </div>
@@ -121,46 +159,75 @@ export const WatchPage: React.FC<WatchPageProps> = ({ mediaId, onNavigate, onOpe
             
             {/* If Series, Episode Selector List */}
             {activeMedia.episodes && activeMedia.episodes.length > 0 ? (
-              <div className="bg-[#141414] p-5 rounded-2xl border border-[#2A2A2A]">
-                <h3 className="font-cinzel text-base font-bold text-[#D4AF37] mb-3 uppercase tracking-wider flex items-center justify-between">
-                  <span>{activeMedia.title}</span>
-                  <span className="text-xs font-normal text-gray-400">{activeMedia.episodes.length} Episodes</span>
-                </h3>
+              <div className="bg-[#141414] p-5 sm:p-6 rounded-2xl border border-[#D4AF37]/35 shadow-2xl shadow-black/70 relative overflow-hidden">
+                {/* Top Gold Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-90" />
 
-                <div className="space-y-2.5 max-h-[650px] overflow-y-auto pr-1.5 custom-scrollbar">
+                <div className="flex items-center justify-between gap-2 pb-3.5 mb-4 border-b border-[#222]">
+                  <div className="flex items-center gap-2 overflow-hidden">
+                    <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shrink-0" />
+                    <h3 className="font-cinzel text-sm sm:text-base font-bold text-[#D4AF37] uppercase tracking-wider truncate">
+                      {activeMedia.title}
+                    </h3>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/40 shrink-0">
+                    {activeMedia.episodes.length} Episodes
+                  </span>
+                </div>
+
+                <div className="space-y-3 max-h-[650px] overflow-y-auto pr-1.5 custom-scrollbar">
                   {activeMedia.episodes.map((ep) => {
                     const isCurrent = ep.id === activeEpisodeId;
                     return (
                       <div
                         key={ep.id}
                         onClick={() => setActiveEpisodeId(ep.id)}
-                        className={`p-3 rounded-xl border transition-all cursor-pointer flex gap-3 items-center ${
+                        className={`group p-3 rounded-xl border transition-all duration-200 cursor-pointer flex gap-3.5 items-center relative overflow-hidden ${
                           isCurrent
-                            ? 'bg-[#4B0082]/60 border-[#D4AF37] shadow-md'
-                            : 'bg-[#1A1A1A] border-[#222] hover:border-gray-500'
+                            ? 'bg-gradient-to-r from-[#4B0082]/60 to-[#1e0033]/70 border-[#D4AF37] shadow-lg shadow-[#4B0082]/30 ring-1 ring-[#D4AF37]/50'
+                            : 'bg-[#1A1A1A] border-[#262626] hover:border-[#D4AF37]/60 hover:bg-[#202020]'
                         }`}
                       >
-                        <div className="relative w-20 aspect-video rounded overflow-hidden shrink-0">
+                        {isCurrent && (
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D4AF37]" />
+                        )}
+                        <div className="relative w-24 aspect-video rounded-lg overflow-hidden shrink-0 bg-black border border-white/10">
                           <img
                             src={ep.thumbnailUrl}
                             alt={ep.title}
                             referrerPolicy="no-referrer"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
-                          {isCurrent && (
-                            <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                              <Play className="w-5 h-5 text-[#D4AF37] fill-current" />
+                          <div className={`absolute inset-0 flex items-center justify-center transition-opacity ${
+                            isCurrent ? 'bg-black/50' : 'bg-black/30 group-hover:bg-black/50'
+                          }`}>
+                            <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
+                              isCurrent ? 'bg-[#D4AF37] text-black shadow-md' : 'bg-black/70 text-white group-hover:text-[#D4AF37]'
+                            }`}>
+                              <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
                             </div>
-                          )}
+                          </div>
                         </div>
 
-                        <div className="flex-1 overflow-hidden">
-                          <div className="text-[10px] font-bold text-[#D4AF37]">
-                            EPISODE {ep.episodeNumber} • {ep.duration}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className={`text-[10px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded ${
+                              isCurrent ? 'bg-[#D4AF37] text-black' : 'bg-[#2A2A2A] text-[#D4AF37]'
+                            }`}>
+                              EPISODE {ep.episodeNumber}
+                            </span>
+                            <span className="text-[11px] text-gray-400 font-medium">{ep.duration}</span>
                           </div>
-                          <h4 className="text-xs font-semibold text-white truncate">
+                          <h4 className={`text-xs font-semibold truncate transition-colors ${
+                            isCurrent ? 'text-white font-bold' : 'text-gray-200 group-hover:text-white'
+                          }`}>
                             {ep.title}
                           </h4>
+                          {ep.synopsis && (
+                            <p className="text-[11px] text-gray-400 line-clamp-1 mt-0.5">
+                              {ep.synopsis}
+                            </p>
+                          )}
                         </div>
                       </div>
                     );
@@ -168,20 +235,30 @@ export const WatchPage: React.FC<WatchPageProps> = ({ mediaId, onNavigate, onOpe
                 </div>
               </div>
             ) : (
-              <div className="bg-[#141414] p-5 rounded-2xl border border-[#2A2A2A]">
-                <h3 className="font-cinzel text-base font-bold text-[#D4AF37] mb-3 uppercase tracking-wider flex items-center justify-between">
-                  <span>More Latest Movies</span>
-                  <span className="text-xs font-normal text-gray-400">Amplifiers TV</span>
-                </h3>
+              <div className="bg-[#141414] p-5 sm:p-6 rounded-2xl border border-[#D4AF37]/35 shadow-2xl shadow-black/70 relative overflow-hidden">
+                {/* Top Gold Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-90" />
 
-                <div className="space-y-2.5 max-h-[650px] overflow-y-auto pr-1.5 custom-scrollbar">
+                <div className="flex items-center justify-between gap-2 pb-3.5 mb-4 border-b border-[#222]">
+                  <div className="flex items-center gap-2 overflow-hidden">
+                    <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shrink-0" />
+                    <h3 className="font-cinzel text-sm sm:text-base font-bold text-[#D4AF37] uppercase tracking-wider">
+                      More Latest Movies
+                    </h3>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/40 shrink-0">
+                    Amplifiers TV
+                  </span>
+                </div>
+
+                <div className="space-y-3 max-h-[650px] overflow-y-auto pr-1.5 custom-scrollbar">
                   {LATEST_VIDEOS.filter((m) => m.id !== activeMedia.id).map((video) => (
                     <div
                       key={video.id}
                       onClick={() => onNavigate('watch', video.id)}
-                      className="p-3 rounded-xl border border-[#222] hover:border-[#D4AF37] bg-[#1A1A1A] transition-all cursor-pointer flex gap-3 items-center group"
+                      className="p-3 rounded-xl border border-[#262626] hover:border-[#D4AF37]/70 bg-[#1A1A1A] hover:bg-[#202020] transition-all cursor-pointer flex gap-3.5 items-center group"
                     >
-                      <div className="relative w-24 aspect-video rounded overflow-hidden shrink-0 bg-black">
+                      <div className="relative w-24 aspect-video rounded-lg overflow-hidden shrink-0 bg-black border border-white/10">
                         <img
                           src={video.posterUrl}
                           alt={video.title}
@@ -189,20 +266,22 @@ export const WatchPage: React.FC<WatchPageProps> = ({ mediaId, onNavigate, onOpe
                           onError={(e) => {
                             (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
                           }}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                          <Play className="w-5 h-5 text-[#D4AF37] fill-current" />
+                          <div className="w-7 h-7 rounded-full bg-black/70 group-hover:text-[#D4AF37] text-white flex items-center justify-center">
+                            <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                          </div>
                         </div>
                       </div>
 
-                      <div className="flex-1 overflow-hidden">
-                        <div className="text-[10px] font-bold text-[#D4AF37] flex items-center gap-1.5">
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[10px] font-bold text-[#D4AF37] flex items-center gap-1.5 mb-1">
                           <span>{video.durationOrSeasons}</span>
                           <span>•</span>
-                          <span>{video.viewCount}</span>
+                          <span>{getCompactLiveView(video.youtubeId, video.viewCount)}</span>
                         </div>
-                        <h4 className="text-xs font-semibold text-white truncate group-hover:text-[#D4AF37] transition-colors">
+                        <h4 className="text-xs font-semibold text-gray-200 group-hover:text-[#D4AF37] transition-colors truncate">
                           {video.title}
                         </h4>
                       </div>
